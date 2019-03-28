@@ -6,7 +6,7 @@ function onShouldSendSongInfo(message, sender, sendResponse)
 {
     if(null == message)
         return;
-        
+    
 	var msgName = message["MsgName"];
 	if("MsgFindSongInfoForPage" != msgName)
         return;
