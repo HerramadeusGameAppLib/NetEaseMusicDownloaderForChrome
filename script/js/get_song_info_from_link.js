@@ -55,7 +55,7 @@ function onShouldSendSongInfo(message, sender, sendResponse)
     //////////////////////////////////////////////////////////////////
 		
     var songInfo = getSongInfoFromTitleElement(g_titleElement);
-	if(null == songInfo)
+    if(null == songInfo)
         songInfo = songId;
     
     //////////////////////////////////////////////////////////////////
