@@ -37,40 +37,40 @@ function getSongInfoFromTitleElement(titleElement)
 ////////////////////////////////////////////////////////////
 
 function onShouldSendSongInfo(message, sender, sendResponse)
-	{
-		msgName = message["MsgName"];
-		if("MsgFindSongInfoForLink" != msgName ||
-            null == g_titleElement)
-		   return;
+{
+	msgName = message["MsgName"];
+	if("MsgFindSongInfoForLink" != msgName ||
+        null == g_titleElement)
+	    return;
 		
-        //////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////
         
-        var songId = message["SongId"];
-        if(null == songId)
-        {
-            alert("无效的歌曲Id!");
-            return;
-        }
-        
-        //////////////////////////////////////////////////////////////////
+    var songId = message["SongId"];
+    if(null == songId)
+    {
+        alert("无效的歌曲Id!");
+        return;
+    }
+    
+    //////////////////////////////////////////////////////////////////
 		
-        var songInfo = getSongInfoFromTitleElement(g_titleElement);
-		if(null == songInfo)
-            songInfo = songId;
+    var songInfo = getSongInfoFromTitleElement(g_titleElement);
+	if(null == songInfo)
+        songInfo = songId;
+    
+    //////////////////////////////////////////////////////////////////
         
-        //////////////////////////////////////////////////////////////////
+    g_titleElement = null;
         
-		g_titleElement = null;
+    //////////////////////////////////////////////////////////////////
         
-        //////////////////////////////////////////////////////////////////
-        
-        if(null != songInfo)
+    if(null != songInfo)
+    {
+        chrome.runtime.sendMessage(null,
         {
-            chrome.runtime.sendMessage(null,
-            {
-                "MsgName" : "MsgDidFindSongInfo",
-                "SongId" : songId,
-                "SongInfo" : songInfo
-            });
-        }	
-	}
+            "MsgName" : "MsgDidFindSongInfo",
+            "SongId" : songId,
+            "SongInfo" : songInfo
+        });
+    }	
+}
