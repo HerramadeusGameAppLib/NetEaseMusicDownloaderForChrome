@@ -38,10 +38,9 @@ function getSongInfoFromTitleElement(titleElement)
 
 function onShouldSendSongInfo(message, sender, sendResponse)
 {
-	msgName = message["MsgName"];
-	if("MsgFindSongInfoForLink" != msgName ||
-        null == g_titleElement)
-	    return;
+    msgName = message["MsgName"];
+    if("MsgFindSongInfoForLink" != msgName || null == g_titleElement)
+        return;
 		
     //////////////////////////////////////////////////////////////////
         
