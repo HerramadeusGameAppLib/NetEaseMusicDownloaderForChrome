@@ -12,10 +12,10 @@ chrome.runtime.onMessage.addListener(onShouldSendSongInfo);
 
 function onShouldGetRightClickedElement(mouseDownArg)
 {
-	if(2 == mouseDownArg.button)
-	{
-		g_titleElement = mouseDownArg.srcElement;
-	}
+    if(2 == mouseDownArg.button)
+    {
+        g_titleElement = mouseDownArg.srcElement;
+    }
 }
 
 ////////////////////////////////////////////////////////////
