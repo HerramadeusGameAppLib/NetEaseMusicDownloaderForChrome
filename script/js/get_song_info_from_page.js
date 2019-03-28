@@ -17,7 +17,7 @@ function onShouldSendSongInfo(message, sender, sendResponse)
        alert("无效的歌曲Id!");
        return;
     }
-		
+	
     // 从本页面获取歌曲信息。
     var songInfo = acquireSongInfo();
     
