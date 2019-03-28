@@ -24,13 +24,13 @@ function getSongInfoFromTitleElement(titleElement)
 {
     var title = null;
     if(null == g_titleElement.title)
-	{
-		title = g_titleElement.getAttribute("title");
-	}
+    {
+        title = g_titleElement.getAttribute("title");
+    }
 	else
 	{
-		title = g_titleElement.title;
-	}
+        title = g_titleElement.title;
+    }
     return title;
 }
 
