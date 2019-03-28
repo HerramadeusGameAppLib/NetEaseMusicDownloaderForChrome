@@ -27,8 +27,8 @@ function getSongInfoFromTitleElement(titleElement)
     {
         title = g_titleElement.getAttribute("title");
     }
-	else
-	{
+    else
+    {
         title = g_titleElement.title;
     }
     return title;
